@@ -56,13 +56,14 @@ public class App {
 
         try(Scanner scanner = new Scanner(System.in)){
 
-            int av;
+            int exe;
+            
                 //QUESTIONANDO O USUARIO SOBRE REALIZAR UM NOVO CALCULO
                 System.out.println("Deseja Calcular novamente: ");
                 System.out.println("Digite ´[1] Para sim / Digite [2] para nao...");
-                av = scanner.nextInt();
+                exe = scanner.nextInt();
 
-            if(av == 1){
+            if(exe == 1){
                 System.out.println("Redirecionando...");
 
             }else{
