@@ -10,45 +10,50 @@ public class Calculadora{
 
     //TAMANHO DO ARRAY
     static int tamanho;
+    static int[] numeros = new int[tamanho];
     
     
 
-    public static void main(String[] args) {
+public static void main(String[] args) {
+
+    int opr;
+
+    System.out.println("Quantos numeros voce deseja usar: ");
+    tamanho = scanner.nextInt();
 
     try(Scanner scan = new Scanner(System.in)){
+        System.out.println("Insira a operacao que deseja usar: \n[1]-Adicao\n[2]-Subtracao\n[3]-Multiplicacao\n[4]-Divisao");
+                opr = scan.nextInt();
+    }
+        switch (opr) {
 
-            int opr;
+                case 1://ADIÇÃO
+                System.out.println("Direcionando...\n");
+                add(args);
+                break;
 
-            System.out.println("Quantos numeros voce deseja usar: ");
-            tamanho = scanner.nextInt();
+                case 2: //SUBTRAÇÃO
+                System.out.println("Direcionando...\n");
+                sub(args);
+                break;
 
-            System.out.println("Insira a operacao que deseja usar: \n [+][-][/][*]");
-                opr = scan.nextInt();   
+                case 3: //MULTIPLICAÇÃO
+                System.out.println("Direcionando...\n");
+                mult(args);
+                break;
 
-            switch (opr) {
-
-                case '+'://ADIÇÃO
-                    add(args);
-
-                case '-': //SUBTRAÇÃO
-                    sub(args);
-
-                case '*': //MULTIPLICAÇÃO
-                    mult(args);
-
-                case '/': //DIVISÃO
-                    div(args);
+                case 4: //DIVISÃO
+                System.out.println("Direcionando...\n");
+                div(args);
+                break;
 
                 default: // VALOR DE RETORNO INVALIDO
                 System.out.println("Operacao invalida! \n Digite novamente...");
                 main(args);
-            }
-
         }
     }
-//CRIANDO O ARRAY
-static int[] numeros = new int[tamanho];
-    //ADIÇÃO
+
+
     public static void add(String[] args) {
         int soma = 0;
 
@@ -60,21 +65,22 @@ static int[] numeros = new int[tamanho];
         for(int numero : numeros){
             soma = soma + numero;
         }
-        exec(args);
-    }
-    //SUBTRAÇÃO
-    public static void sub(String[] args) {
-        exec(args);
-    }
-    //MULTIPLICAÇÃO
-    public static void mult(String[] args) {
-        exec(args);
-    }
-    //DIVISÃO
-    public static void div(String[] args) {
-        exec(args);
     }
 
+    public static void sub(String[] args) {
+        System.out.println("Metodo chamado com sucesso");
+        
+    }
+
+    public static void mult(String[] args) {
+        System.out.println("Metodo chamado com sucesso");
+        
+    }
+
+    public static void div(String[] args) {
+        System.out.println("Metodo chamado com sucesso");
+        
+    }
 public static void exec(String[] args) {
 
     boolean confirm;
@@ -85,9 +91,8 @@ public static void exec(String[] args) {
     if (confirm) {
         System.out.println("Retornando ao menu principal...");
         main(args);
+        }
     }
-
-}
 }
 
 
