@@ -10,6 +10,7 @@ public class App {
         static int nota1;
         static int nota2;
         static int nota3;
+        static int av;
         static int media;
 
     public static void main(String[] args) {
@@ -18,15 +19,18 @@ public class App {
             //CRIAÇÃO DO OBJETO PARA LER OS NUMEROS
         try(Scanner scanner = new Scanner(System.in)){
 
+        //PARAMETRO DE AVALIAÇÃO
+        System.out.println("Insira a media de avaliacao: ");
+        media = scanner.nextInt();
+
+            //LEITURA DE NOTAS
             System.out.println("Insira a nota 01: ");
                 nota1 = scanner.nextInt();
-            //Leitura da Nota 01
             System.out.println("Insira a nota 02: ");
                 nota2 = scanner.nextInt();
-            //Leitura da Nota 02
             System.out.println("Insira a nota 03: ");
                 nota3 = scanner.nextInt();
-            //Leitura da nota 03
+
         
 
                     System.out.println("Calculando a média...");
@@ -37,14 +41,33 @@ public class App {
     
     public static void avaliar(String[] args) {
 
-        media = (nota1 + nota2 + nota3)/3;
+        av = (nota1 + nota2 + nota3)/3;
     
-    if(media >= 7){
+    if(av >= media){
         System.out.println("Aluno aprovado!");
+        exec(args);
     }else{
         System.out.println("Aluno Reprovado");
-        main(args);
+        exec(args);
     }
     }
+    
+    public static void exec(String[] args) {
 
+        try(Scanner scanner = new Scanner(System.in)){
+
+            int av;
+                //QUESTIONANDO O USUARIO SOBRE REALIZAR UM NOVO CALCULO
+                System.out.println("Deseja Calcular novamente: ");
+                System.out.println("Digite ´[1] Para sim / Digite [2] para nao...");
+                av = scanner.nextInt();
+
+            if(av == 1){
+                System.out.println("Redirecionando...");
+
+            }else{
+                System.out.println("Obrigado por calcular! \n Até logo!");
+            }
+        }
+    }
 }
